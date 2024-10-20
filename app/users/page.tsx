@@ -1,12 +1,7 @@
 
-'use client';
-
 import Layout from '../../components/Layout';
-import { useSession } from 'next-auth/react';
 
 export default function Users() {
-  const { data: session } = useSession();
-
   return (
     <Layout>
       <h1 className="text-3xl font-bold">Users</h1>
@@ -21,7 +16,6 @@ export default function Users() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {/* We'll populate this with actual user data later */}
             <tr>
               <td className="px-6 py-4 whitespace-nowrap">123456789</td>
               <td className="px-6 py-4 whitespace-nowrap">johndoe</td>

@@ -1,12 +1,7 @@
 
-'use client';
-
 import Layout from '../../components/Layout';
-import { useSession } from 'next-auth/react';
 
 export default function Tasks() {
-  const { data: session } = useSession();
-
   return (
     <Layout>
       <h1 className="text-3xl font-bold">Tasks</h1>
@@ -21,7 +16,6 @@ export default function Tasks() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {/* We'll populate this with actual task data later */}
             <tr>
               <td className="px-6 py-4 whitespace-nowrap">Join Telegram Group</td>
               <td className="px-6 py-4 whitespace-nowrap">Join our official Telegram group</td>

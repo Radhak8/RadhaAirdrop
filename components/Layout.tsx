@@ -1,24 +1,8 @@
 
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { useSession, signOut } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { data: session, status } = useSession();
-  const router = useRouter();
-
-  if (status === 'loading') {
-    return <div>Loading...</div>;
-  }
-
-  if (!session) {
-    router.push('/auth/signin');
-    return null;
-  }
-
   return (
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white shadow-sm">
@@ -36,14 +20,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   Tasks
                 </Link>
               </div>
-            </div>
-            <div className="flex items-center">
-              <button
-                onClick={() => signOut()}
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Sign Out
-              </button>
             </div>
           </div>
         </div>
